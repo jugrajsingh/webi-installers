@@ -49,7 +49,7 @@ var baseurl = 'https://webinstall.dev';
 var maxLen = 0;
 console.info('');
 console.info('Has the necessary files?');
-['README.md', 'releases.js', 'install.sh', 'install.ps1']
+['README.md', 'install.sh', 'install.ps1']
   .map(function (node) {
     maxLen = Math.max(maxLen, node.length);
     return node;
@@ -71,6 +71,14 @@ Builds.getPackage({ name: projName }).then(async function (/*projInfo*/) {
   var nodeOs = os.platform();
   var nodeOsRelease = os.release();
   var nodeArch = os.arch();
+  
+   // To make arch names compatible across all helpers
+  if (nodeArch === 'x64') {
+    nodeArch = 'amd64';
+  } else if (nodeArch === 'arm64') {
+    nodeArch = 'arm64';
+  }
+
   var nodeLibc = 'libc';
   if (process.platform === 'linux') {
     nodeLibc = 'gnu';

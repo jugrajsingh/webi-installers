@@ -10,7 +10,9 @@ __rmrf_local() {
                 arc \
                 archiver \
                 awless \
+                basecamp \
                 bat \
+                btop \
                 caddy \
                 chromedriver \
                 cmake \
@@ -106,6 +108,7 @@ __rmrf_local() {
                 arc \
                 archiver \
                 awless \
+                basecamp \
                 bat \
                 caddy \
                 chromedriver \
@@ -205,6 +208,7 @@ __test() {
         arc \
         archiver \
         awless \
+        basecamp \
         bat \
         caddy \
         chromedriver \
